@@ -25,7 +25,7 @@ def get_comment(id):
         # Get user info from User Service
         if comment_info["user_id"]:
             try: 
-                response = requests.get(f'https://myuserservice.azurewebsites.net/user/{comment_info["user_id"]}')
+                response = requests.get(f'https://myuserserviceboyuan.azurewebsites.net/user/{comment_info["user_id"]}')
                 if response.status_code == 200:
                     comment_info['user'] = response.json()
             except:
@@ -34,9 +34,8 @@ def get_comment(id):
         # Get post info from Post Service
         if comment_info["post_id"]:
             try:
-                response = requests.get(f'https://mypostservice.azurewebsites.net/post/{comment_info["post_id"]}')                
+                response = requests.get(f'https://mypostserviceboyuan.azurewebsites.net/post/{comment_info["post_id"]}')                
                 if response.status_code == 200:
-                    print("got post")
                     comment_info['post'] = response.json()                
             except:
                 pass
