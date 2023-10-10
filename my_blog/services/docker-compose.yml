@@ -14,5 +14,12 @@ services:
     networks:
       - mynetwork
       
+  comment_service:
+    build: ./services/comment_service
+    ports:
+      - "5003:5000"
+    networks:
+      - mynetwork
+
 networks:
   mynetwork:
